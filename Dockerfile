@@ -13,8 +13,5 @@ RUN npm ci --production
 # Copy the rest of the application files to the container
 COPY . .
 
-# Expose the port on which the SolidJS application will run (adjust if necessary)
-EXPOSE 3000
-
 # Set the command to start the SolidJS application
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm start -- --port $PORT --host 0.0.0.0"]
