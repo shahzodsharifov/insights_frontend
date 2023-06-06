@@ -1,0 +1,17 @@
+app = "insightzuz"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[[services]]
+    internal_port = 3000
+    protocol = "tcp"
+
+    [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+    [[services.ports]]
+    handlers = ["http"]
+    start_port = 3000
+    end_port = 3000
