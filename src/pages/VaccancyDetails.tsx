@@ -68,13 +68,13 @@ const VaccancyDetails =()=> {
    
   createEffect(() => {
    
-    instance.get(`http://localhost:8000/api/vaccancies/${path[2]}`).then((theVaccancy) => {
+    instance.get(`http://13.49.228.160:80/api/vaccancies/${path[2]}`).then((theVaccancy) => {
     
         console.log(theVaccancy.data.data.vaccancy)
       
         setVaccancyData(theVaccancy.data.data.vaccancy)
 
-      //   instance.get(`http://localhost:8000/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
+      //   instance.get(`http://13.49.228.160:80/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
       //     console.log(user.data.data.user)
       //     setUsrName(user.data.data.user.Name)
       //     setUsrPhoto(user.data.data.user.Photo)

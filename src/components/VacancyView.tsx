@@ -20,7 +20,7 @@ const VacancyView = (props: VaccancyProps)=> {
       });
 
     createRenderEffect(()=>{
-        instance.get(`http://localhost:8000/api/users/${props.employerId}`).then((user)=> {
+        instance.get(`http://13.49.228.160:80/api/users/${props.employerId}`).then((user)=> {
             console.log(user.data.data.user)
             setUsrName(user.data.data.user.Name)
            

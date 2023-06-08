@@ -24,7 +24,7 @@ const Programming= () => {
 
 
   createEffect(() => {
-    instance.get("http://localhost:8000/api/posts/topics/Dasturlash",{
+    instance.get("http://13.49.228.160:80/api/posts/topics/Dasturlash",{
 
   
   }

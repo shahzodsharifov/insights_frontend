@@ -30,7 +30,7 @@ const Vaccancies:Component =()=> {
     
 
   createEffect(()=>{
-    instance.get("http://localhost:8000/api/vaccancies/").then((tVaccancies) => {
+    instance.get("http://13.49.228.160:80/api/vaccancies/").then((tVaccancies) => {
       console.log(tVaccancies.data)
       tVaccancies.data.data.vaccancies.map((e:VaccancyType)=> {
         setVaccancies([...vaccancies(), e])

@@ -23,7 +23,7 @@ const Companies =()=> {
   });
 
   createEffect(()=> {
-    instance.get("http://localhost:8000/api/companies/").then((theCompanies) => {
+    instance.get("http://13.49.228.160:80/api/companies/").then((theCompanies) => {
       console.log(theCompanies.data)
       theCompanies.data.companies.map((e:CompanyType)=> {
         setCompanies([...companies(), e])

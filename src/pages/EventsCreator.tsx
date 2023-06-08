@@ -142,7 +142,7 @@ const EventsCreator = () => {
         return index < elements().length -1
       }))
       console.log(theInfo())
-      instance.post(`http://localhost:8000/api/users/${usrDetails.id}/addEvent`, {
+      instance.post(`http://13.49.228.160:80/api/users/${usrDetails.id}/addEvent`, {
         Title: theTitle(),
         Date: theDate(),
         Location: theLocation(),
@@ -159,7 +159,7 @@ const EventsCreator = () => {
 
 
     createEffect(() => {
-      instance.get("http://localhost:8000/api/users/me", {
+      instance.get("http://13.49.228.160:80/api/users/me", {
 
       })
       .then((response)=> {

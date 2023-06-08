@@ -26,7 +26,7 @@ const Sidebar= (props:SidebarProps) => {
 
 
     createEffect(()=> {
-        instance.get("http://localhost:8000/api/users/me")
+        instance.get("http://13.49.228.160:80/api/users/me")
         .then((response)=> {
           setLogin(true)
           console.log(response)

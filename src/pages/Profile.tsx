@@ -59,7 +59,7 @@ const Profile:Component =()=> {
 
   const fetchUser = async () => {
 
-      const res = await fetch("http://localhost:8000/api/users/me", {
+      const res = await fetch("http://13.49.228.160:80/api/users/me", {
         method: "GET",
         mode: "cors",
         credentials: "include",
@@ -90,7 +90,7 @@ const Profile:Component =()=> {
 
      
   
-      instance.get(`http://localhost:8000/api/users/${theUsr.id}/posts`).then((thePosts) => {
+      instance.get(`http://13.49.228.160:80/api/users/${theUsr.id}/posts`).then((thePosts) => {
         console.log(thePosts.data)
         thePosts.data.map((e:PostType)=> {
           setPosts([...posts(), e])
@@ -109,13 +109,13 @@ const Profile:Component =()=> {
       })
 
       
-      instance.get(`http://localhost:8000/api/users/${user.id}/followers`).then((res)=> {
+      instance.get(`http://13.49.228.160:80/api/users/${user.id}/followers`).then((res)=> {
         setMyFollowers(res.data)
         console.log(res.data,"done deal")
      
       })
 
-      instance.get(`http://localhost:8000/api/users/${user.id}/following`).then((res)=> {
+      instance.get(`http://13.49.228.160:80/api/users/${user.id}/following`).then((res)=> {
         setMyFollowings(res.data)
         console.log(res.data,"done deal")
      
