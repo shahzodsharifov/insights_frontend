@@ -23,7 +23,7 @@ const App: Component = () => {
     
   });
   createEffect(() => {
-    instance.get("https://13.49.228.160443/api/posts/trendingPosts").then((tPosts) => {
+    instance.get("https://13.49.228.160:443/api/posts/trendingPosts").then((tPosts) => {
       console.log(tPosts.data)
       tPosts.data.data.post.map((e:PostType)=> {
         setTrendingPosts([...trendingPosts(), e])

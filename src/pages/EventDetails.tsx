@@ -68,13 +68,13 @@ const EventDetails =()=> {
    
   createEffect(() => {
    
-    instance.get(`https://13.49.228.160443/api/events/${path[2]}`).then((theEvent) => {
+    instance.get(`https://13.49.228.160:443/api/events/${path[2]}`).then((theEvent) => {
     
         console.log(theEvent.data.data.event)
       
         setEventData(theEvent.data.data.event)
 
-        instance.get(`https://13.49.228.160443/api/users/${theEvent.data.data.event.organizer_id}`).then((user)=> {
+        instance.get(`https://13.49.228.160:443/api/users/${theEvent.data.data.event.organizer_id}`).then((user)=> {
           console.log(user.data.data.user)
           setUsrName(user.data.data.user.Name)
           setUsrPhoto(user.data.data.user.Photo)

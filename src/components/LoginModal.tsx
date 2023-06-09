@@ -53,7 +53,7 @@ const LoginModal = (props:any) => {
     }
 
     const handleLogin = () => {
-      instance.post("https://13.49.228.160443/api/auth/login", {
+      instance.post("https://13.49.228.160:443/api/auth/login", {
         email: form.email,
         password: form.password
       }).then((response) => {

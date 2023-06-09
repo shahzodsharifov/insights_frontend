@@ -24,7 +24,7 @@ const Programming= () => {
 
 
   createEffect(() => {
-    instance.get("https://13.49.228.160443/api/posts/topics/Dasturlash",{
+    instance.get("https://13.49.228.160:443/api/posts/topics/Dasturlash",{
 
   
   }
