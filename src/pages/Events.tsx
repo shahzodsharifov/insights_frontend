@@ -34,7 +34,7 @@ const Events:Component =()=> {
   })
 
   createEffect(() => {
-    instance.get("https://13.49.228.160:80/api/events")
+    instance.get("https://13.49.228.160443/api/events")
     .then((tEvents)=> {
       console.log(tEvents.data)
       tEvents.data.data.events.map((e:EventType)=> {

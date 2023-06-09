@@ -259,7 +259,7 @@ const Editor = () => {
               client.uploadFile(selectedFile()!).then((file) => {
                 setPhotoId(file.uuid)
                 console.log(file.uuid)
-                instance.post(`https://13.49.228.160:80/api/users/${id}/addPost`, {
+                instance.post(`https://13.49.228.160443/api/users/${id}/addPost`, {
                   Headline: theHeadline(),
                   Subtitle: theSubheadline(),
                   Body: theBody(),

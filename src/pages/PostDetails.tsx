@@ -84,13 +84,13 @@ const PostDetails =()=> {
    
   createEffect(() => {
    
-    instance.get(`https://13.49.228.160:80/api/posts/${path[2]}`).then((thePost) => {
+    instance.get(`https://13.49.228.160443/api/posts/${path[2]}`).then((thePost) => {
     
         console.log(thePost.data.data.post)
       
         setPostData(thePost.data.data.post)
 
-        instance.get(`https://13.49.228.160:80/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
+        instance.get(`https://13.49.228.160443/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
           console.log(user.data.data.user)
           setUsrName(user.data.data.user.Name)
           setUsrPhoto(user.data.data.user.Photo)
@@ -101,7 +101,7 @@ const PostDetails =()=> {
         
         )
 
-     instance.get(`https://13.49.228.160:80/api/posts/${path[2]}/comments`)
+     instance.get(`https://13.49.228.160443/api/posts/${path[2]}/comments`)
      .then((theComments) => {
       console.log(theComments.data)
       theComments.data.map((theComment:CommentType)=> {
@@ -110,7 +110,7 @@ const PostDetails =()=> {
       })
      })   
 
-     instance.get(`https://13.49.228.160:80/api/posts/${path[2]}/likes`).then((theLikes)=> {
+     instance.get(`https://13.49.228.160443/api/posts/${path[2]}/likes`).then((theLikes)=> {
       console.log(theLikes.data)
       setPostLikes(theLikes.data)
       for(let i=0; i<postLikes().length; i++) {
@@ -121,7 +121,7 @@ const PostDetails =()=> {
       }
      })
 
-     instance.get("https://13.49.228.160:80/api/users/me").then((theMe) => {
+     instance.get("https://13.49.228.160443/api/users/me").then((theMe) => {
       setMe(theMe.data.data.user.id)
 
      } )
@@ -188,11 +188,11 @@ const PostDetails =()=> {
                   console.log("clickedd")
                   setDidILike(true)
                   console.log(didILike())
-                  instance.post(`https://13.49.228.160:80/api/posts/${path[2]}/likePost`, {
+                  instance.post(`https://13.49.228.160443/api/posts/${path[2]}/likePost`, {
                     post_id: path[2],
                     user_id: me()
                   }).then(()=> {
-                    instance.get(`https://13.49.228.160:80/api/posts/${path[2]}/likes`).then((theLikes)=> {
+                    instance.get(`https://13.49.228.160443/api/posts/${path[2]}/likes`).then((theLikes)=> {
                       console.log(theLikes.data)
                       setPostLikes(theLikes.data)
                       for(let i=0; i<postLikes().length; i++) {
@@ -214,11 +214,11 @@ const PostDetails =()=> {
                     console.log("clickedd", post.ID)
                     setDidILike(false)
                     console.log(didILike())
-                    instance.post(`https://13.49.228.160:80/api/posts/${path[2]}/unlikePost`, {
+                    instance.post(`https://13.49.228.160443/api/posts/${path[2]}/unlikePost`, {
                       post_id: path[2],
                       user_id: me()
                     }).then(()=> {
-                      instance.get(`https://13.49.228.160:80/api/posts/${path[2]}/likes`).then((theLikes)=> {
+                      instance.get(`https://13.49.228.160443/api/posts/${path[2]}/likes`).then((theLikes)=> {
                         console.log(theLikes.data)
                         setPostLikes(theLikes.data)
                         for(let i=0; i<postLikes().length; i++) {
@@ -273,9 +273,9 @@ const PostDetails =()=> {
         console.log(myComment())
         console.log(post.author_id)
         
-        instance.get("https://13.49.228.160:80/api/users/me").then((me) => {
+        instance.get("https://13.49.228.160443/api/users/me").then((me) => {
           console.log(me.data.data.user)
-          instance.post(`https://13.49.228.160:80/api/posts/${path[2]}/createComment`,
+          instance.post(`https://13.49.228.160443/api/posts/${path[2]}/createComment`,
           {
             body: myComment(),
             author_id: me.data.data.user.id
@@ -283,7 +283,7 @@ const PostDetails =()=> {
           )
           .then((res)=> {
             console.log(res.data)
-            instance.get(`https://13.49.228.160:80/api/posts/${path[2]}/comments`)
+            instance.get(`https://13.49.228.160443/api/posts/${path[2]}/comments`)
             .then((theComments) => {
              console.log(theComments.data)
              theComments.data.map((theComment:CommentType)=> {

@@ -41,7 +41,7 @@ const LoginModal = (props:any) => {
       if(isCompany()) {
         theRole = "company"
       }
-      instance.post("https://13.49.228.160:80/api/auth/register", {
+      instance.post("https://13.49.228.160443/api/auth/register", {
         name: form.name,
         username: form.username,
         email: form.email,
@@ -53,7 +53,7 @@ const LoginModal = (props:any) => {
     }
 
     const handleLogin = () => {
-      instance.post("https://13.49.228.160:80/api/auth/login", {
+      instance.post("https://13.49.228.160443/api/auth/login", {
         email: form.email,
         password: form.password
       }).then((response) => {

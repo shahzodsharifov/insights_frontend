@@ -12,7 +12,7 @@ const CommentView = (props: CommentType) => {
         withCredentials: true
     })
     createEffect(() => {
-        instance.get(`https://13.49.228.160:80/api/users/${props.author_id}`).then((user)=> {
+        instance.get(`https://13.49.228.160443/api/users/${props.author_id}`).then((user)=> {
             console.log(user.data.data.user.Name)
             setAuthorName(user.data.data.user.Name)
             setUsrPhoto(user.data.data.user.Photo)

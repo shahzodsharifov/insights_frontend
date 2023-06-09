@@ -27,7 +27,7 @@ const Post= (props:PostProps)=> {
       });
 
     createEffect(()=>{
-      instance.get("https://13.49.228.160:80/api/users/me").then((theMe) => {
+      instance.get("https://13.49.228.160443/api/users/me").then((theMe) => {
         console.log(theMe.data.data.user.id)
         setMe(theMe.data.data.user.id)
 
@@ -37,7 +37,7 @@ const Post= (props:PostProps)=> {
         )
 
        
-        instance.get(`https://13.49.228.160:80/api/posts/${props.postID}/likes`).then((theLikes)=> {
+        instance.get(`https://13.49.228.160443/api/posts/${props.postID}/likes`).then((theLikes)=> {
           console.log(theLikes.data)
           setPostLikes(theLikes.data)
           for(let i=0; i<postLikes().length; i++) {
@@ -50,13 +50,13 @@ const Post= (props:PostProps)=> {
          })
 
 
-        instance.get(`https://13.49.228.160:80/api/posts/${props.postID}/comments`)
+        instance.get(`https://13.49.228.160443/api/posts/${props.postID}/comments`)
         .then((theComments) => {
          console.log(theComments.data)
           setPostComments(theComments.data)
         })   
 
-        instance.get(`https://13.49.228.160:80/api/users/${props.authorId}`).then((user)=> {
+        instance.get(`https://13.49.228.160443/api/users/${props.authorId}`).then((user)=> {
             console.log(user.data.data.user)
             setUsrName(user.data.data.user.Name)
             setUsrPhoto(user.data.data.user.Photo)
@@ -100,11 +100,11 @@ const Post= (props:PostProps)=> {
                   console.log("clickedd")
                   setDidILike(true)
                   console.log(didILike())
-                  instance.post(`https://13.49.228.160:80/api/posts/${props.postID}/likePost`, {
+                  instance.post(`https://13.49.228.160443/api/posts/${props.postID}/likePost`, {
                     post_id: props.postID,
                     user_id: me()
                   }).then(()=> {
-                    instance.get(`https://13.49.228.160:80/api/posts/${props.postID}/likes`).then((theLikes)=> {
+                    instance.get(`https://13.49.228.160443/api/posts/${props.postID}/likes`).then((theLikes)=> {
                       console.log(theLikes.data)
                       setPostLikes(theLikes.data)
                       for(let i=0; i<postLikes().length; i++) {
@@ -126,11 +126,11 @@ const Post= (props:PostProps)=> {
                     console.log("clickedd", props.postID, "kl")
                     setDidILike(false)
                     console.log(didILike())
-                    instance.post(`https://13.49.228.160:80/api/posts/${props.postID}/unlikePost`, {
+                    instance.post(`https://13.49.228.160443/api/posts/${props.postID}/unlikePost`, {
                       post_id: props.postID,
                       user_id: me(),
                     }).then(()=> {
-                      instance.get(`https://13.49.228.160:80/api/posts/${props.postID}/likes`).then((theLikes)=> {
+                      instance.get(`https://13.49.228.160443/api/posts/${props.postID}/likes`).then((theLikes)=> {
                         console.log(theLikes.data)
                         setPostLikes(theLikes.data)
                         for(let i=0; i<postLikes().length; i++) {

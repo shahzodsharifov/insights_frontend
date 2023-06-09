@@ -144,7 +144,7 @@ const VaccancyCreator = () => {
       }))
       console.log(offerList)
       console.log(theInfo())
-      instance.post(`https://13.49.228.160:80/api/users/${usrDetails.id}/addVaccancy`, {
+      instance.post(`https://13.49.228.160443/api/users/${usrDetails.id}/addVaccancy`, {
         Title: theTitle(),
         Location: theLocation(),
         Salary: theSalary(),
@@ -165,7 +165,7 @@ const VaccancyCreator = () => {
 
 
     createEffect(() => {
-      instance.get("https://13.49.228.160:80/api/users/me", {
+      instance.get("https://13.49.228.160443/api/users/me", {
 
       })
       .then((response)=> {
