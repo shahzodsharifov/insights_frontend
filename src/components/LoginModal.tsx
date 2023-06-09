@@ -41,7 +41,7 @@ const LoginModal = (props:any) => {
       if(isCompany()) {
         theRole = "company"
       }
-      instance.post("http://13.49.228.160:80/api/auth/register", {
+      instance.post("https://13.49.228.160:80/api/auth/register", {
         name: form.name,
         username: form.username,
         email: form.email,
@@ -53,7 +53,7 @@ const LoginModal = (props:any) => {
     }
 
     const handleLogin = () => {
-      instance.post("http://13.49.228.160:80/api/auth/login", {
+      instance.post("https://13.49.228.160:80/api/auth/login", {
         email: form.email,
         password: form.password
       }).then((response) => {
@@ -79,7 +79,7 @@ const LoginModal = (props:any) => {
                 props.setLoginModalShow(false)
                 console.log("clicked")
               }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff" xmlns="https://www.w3.org/2000/svg">
                <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-opacity={0.75} stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
        
@@ -187,7 +187,7 @@ const LoginModal = (props:any) => {
                 <div class="bg-[#171717] md:w-[24rem] md:h-[32rem] flex flex-col max-sm:w-full max-sm:h-[100vh] max-sm:px-5  md:px-12 md:rounded-[1.2rem] md:py-10">
                    <div class="flex flex-row justify-end">
                   <div onClick={()=> props.setLoginModalShow(false)}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff" xmlns="https://www.w3.org/2000/svg">
                    <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-opacity={0.75} stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"/>
                    </svg>
            

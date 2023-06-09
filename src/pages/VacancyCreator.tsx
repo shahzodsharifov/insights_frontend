@@ -144,7 +144,7 @@ const VaccancyCreator = () => {
       }))
       console.log(offerList)
       console.log(theInfo())
-      instance.post(`http://13.49.228.160:80/api/users/${usrDetails.id}/addVaccancy`, {
+      instance.post(`https://13.49.228.160:80/api/users/${usrDetails.id}/addVaccancy`, {
         Title: theTitle(),
         Location: theLocation(),
         Salary: theSalary(),
@@ -165,7 +165,7 @@ const VaccancyCreator = () => {
 
 
     createEffect(() => {
-      instance.get("http://13.49.228.160:80/api/users/me", {
+      instance.get("https://13.49.228.160:80/api/users/me", {
 
       })
       .then((response)=> {
@@ -216,7 +216,7 @@ const VaccancyCreator = () => {
                  <p class="text-[#e8f6ff] ">{theJobType()}</p>
             </Show>
             <div onClick={()=> setSelectJobType(!selectJobType())}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M6 9L12 15L18 9" stroke="white" stroke-opacity={0.75} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </div>
@@ -252,7 +252,7 @@ const VaccancyCreator = () => {
            <div class="flex flex-row gap-2">
            <Show when={elements().length<16} fallback={<p class="text-white text-[17px]">Maximum 16ta talab qo'yish mumkin</p>}>
              <button onClick={handleAddElement} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
@@ -261,7 +261,7 @@ const VaccancyCreator = () => {
 
              <Show when={elements().length>1}>
              <button onClick={handleReqDel} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
@@ -282,7 +282,7 @@ const VaccancyCreator = () => {
            <div class="flex flex-row gap-2">
            <Show when={conElements().length < 16} fallback={<p class="text-white text-[17px]">Maximum 16ta taklif qo'yish mumkin</p>}>
             <button onClick={handleConElement} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
@@ -291,7 +291,7 @@ const VaccancyCreator = () => {
 
             <Show when={conElements().length>1}>
              <button onClick={handleOfferDel} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 

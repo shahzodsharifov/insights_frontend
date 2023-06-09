@@ -20,7 +20,7 @@ const EventsView = (props: EventsProps)=> {
       });
 
     createRenderEffect(()=>{
-        instance.get(`http://13.49.228.160:80/api/users/${props.organizerId}`).then((user)=> {
+        instance.get(`https://13.49.228.160:80/api/users/${props.organizerId}`).then((user)=> {
             console.log(user.data.data.user)
             setUsrName(user.data.data.user.Name)
            

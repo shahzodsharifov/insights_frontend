@@ -142,7 +142,7 @@ const EventsCreator = () => {
         return index < elements().length -1
       }))
       console.log(theInfo())
-      instance.post(`http://13.49.228.160:80/api/users/${usrDetails.id}/addEvent`, {
+      instance.post(`https://13.49.228.160:80/api/users/${usrDetails.id}/addEvent`, {
         Title: theTitle(),
         Date: theDate(),
         Location: theLocation(),
@@ -159,7 +159,7 @@ const EventsCreator = () => {
 
 
     createEffect(() => {
-      instance.get("http://13.49.228.160:80/api/users/me", {
+      instance.get("https://13.49.228.160:80/api/users/me", {
 
       })
       .then((response)=> {
@@ -206,7 +206,7 @@ const EventsCreator = () => {
                  <p class="text-[#e8f6ff] ">{theEventType()}</p>
             </Show>
             <div onClick={()=> setSelectJobType(!selectJobType())}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M6 9L12 15L18 9" stroke="white" stroke-opacity={0.75} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </div>
@@ -230,7 +230,7 @@ const EventsCreator = () => {
             
             {/* <div class="relative max-w-sm">
               <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="#ffffff55" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="#ffffff55" viewBox="0 0 20 20" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
               </div>
               <input inline-datepicker type="date" class="bg-transparent border border-[#ffffff55] text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Sanani tanlang"/>
             </div> */}
@@ -242,7 +242,7 @@ const EventsCreator = () => {
             onChange={(e)=> setTheDate(e.target.value.toString())}
             class=" pl-4 bg-transparent pr-4 py-2 border border-[#ffffff55] rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"/>
   <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="#ffffff55" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="#ffffff55" viewBox="0 0 20 20" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
              
   </div>
 </div>
@@ -264,7 +264,7 @@ const EventsCreator = () => {
            <div class="flex flex-row gap-2">
            <Show when={elements().length<16} fallback={<p class="text-white text-[17px]">Maximum 16ta talab qo'yish mumkin</p>}>
              <button onClick={handleAddElement} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
@@ -273,7 +273,7 @@ const EventsCreator = () => {
 
              <Show when={elements().length>1}>
              <button onClick={handleReqDel} class="w-[4rem] flex flex-row items-center justify-center bg-[#35373B] p-2 rounded-[0.4rem] text-white">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
             <path d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
