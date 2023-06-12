@@ -20,7 +20,7 @@ const VacancyView = (props: VaccancyProps)=> {
       });
 
     createRenderEffect(()=>{
-        instance.get(`https://13.49.228.160:443/api/users/${props.employerId}`).then((user)=> {
+        instance.get(`https://insightsbackend.onrender.com/api/users/${props.employerId}`).then((user)=> {
             console.log(user.data.data.user)
             setUsrName(user.data.data.user.Name)
            

@@ -142,7 +142,7 @@ const EventsCreator = () => {
         return index < elements().length -1
       }))
       console.log(theInfo())
-      instance.post(`https://13.49.228.160:443/api/users/${usrDetails.id}/addEvent`, {
+      instance.post(`https://insightsbackend.onrender.com/api/users/${usrDetails.id}/addEvent`, {
         Title: theTitle(),
         Date: theDate(),
         Location: theLocation(),
@@ -159,7 +159,7 @@ const EventsCreator = () => {
 
 
     createEffect(() => {
-      instance.get("https://13.49.228.160:443/api/users/me", {
+      instance.get("https://insightsbackend.onrender.com/api/users/me", {
 
       })
       .then((response)=> {

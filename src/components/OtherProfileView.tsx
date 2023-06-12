@@ -38,19 +38,19 @@ const OtherProfileView = (props:MyProfileViewProps)=> {
     const [otherFollowing, setOtherFollowing] = createSignal<Array<UserRelationship>>([])
 
     createEffect(()=>{
-        instance.get(`https://13.49.228.160:443/api/users/${props.followingID}/following`).then((res)=> {
+        instance.get(`https://insightsbackend.onrender.com/api/users/${props.followingID}/following`).then((res)=> {
             console.log("this is", res.data)
             setOtherFollowing(res.data)
     
           })
 
-          instance.get(`https://13.49.228.160:443/api/users/${props.followingID}/followers`).then((res)=> {
+          instance.get(`https://insightsbackend.onrender.com/api/users/${props.followingID}/followers`).then((res)=> {
             console.log("this is", res.data)
             setOtherFollowers(res.data)
     
           })
 
-          instance.get(`https://13.49.228.160:443/api/users/${props.followerID}/following`).then((res)=> {
+          instance.get(`https://insightsbackend.onrender.com/api/users/${props.followerID}/following`).then((res)=> {
             console.log("this is", res.data)
             setOtherFollowing(res.data)
             res.data.map((rel:UserRelationship)=> {
@@ -81,17 +81,17 @@ const OtherProfileView = (props:MyProfileViewProps)=> {
         <Show when={isFollowing()} fallback={
               <button class="bg-white rounded-[4px]  w-[8rem] text-center h-[2.5rem]" onClick={()=> {
                 
-                instance.post(`https://13.49.228.160:443/api/users/263945d0-453c/following`, {
+                instance.post(`https://insightsbackend.onrender.com/api/users/263945d0-453c/following`, {
                     followerID: props.followerID,
                     followingID: props.followingID
                 }).then((response)=>{
-                    instance.get(`https://13.49.228.160:443/api/users/${props.followingID}/followers`).then((res)=> {
+                    instance.get(`https://insightsbackend.onrender.com/api/users/${props.followingID}/followers`).then((res)=> {
                         setOtherFollowers(res.data)
                         console.log(res.data, "these are the followers")
                      
                       })
                     console.log(response.data)
-                    instance.get(`https://13.49.228.160:443/api/users/${props.followerID}/following`).then((res)=> {
+                    instance.get(`https://insightsbackend.onrender.com/api/users/${props.followerID}/following`).then((res)=> {
                     
                     res.data.map((rel:UserRelationship)=> {
                       console.log(rel.FollowerID)
@@ -109,19 +109,19 @@ const OtherProfileView = (props:MyProfileViewProps)=> {
         }>
             <button class="bg-white rounded-[4px]  w-[10rem] text-center h-[2.5rem]" onClick={()=> {
 
-                instance.post(`https://13.49.228.160:443/api/users/263945d0-453c/unfollow`, {
+                instance.post(`https://insightsbackend.onrender.com/api/users/263945d0-453c/unfollow`, {
                     followerID: props.followerID,
                     followingID: props.followingID
                 }).then((response)=>{
                     console.log(response.data)
                     // setIsFollowing(false)
-                    instance.get(`https://13.49.228.160:443/api/users/${props.followingID}/followers`).then((res)=> {
+                    instance.get(`https://insightsbackend.onrender.com/api/users/${props.followingID}/followers`).then((res)=> {
                         setOtherFollowers(res.data)
                         console.log(res.data,"done deal")
                      
                       })
 
-                    instance.get(`https://13.49.228.160:443/api/users/${props.followerID}/following`).then((res)=> {
+                    instance.get(`https://insightsbackend.onrender.com/api/users/${props.followerID}/following`).then((res)=> {
                         console.log(res.data)
 
                         if(res.data.length > 0) {

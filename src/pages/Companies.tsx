@@ -23,7 +23,7 @@ const Companies =()=> {
   });
 
   createEffect(()=> {
-    instance.get("https://13.49.228.160:443/api/companies/").then((theCompanies) => {
+    instance.get("https://insightsbackend.onrender.com/api/companies/").then((theCompanies) => {
       console.log(theCompanies.data)
       theCompanies.data.companies.map((e:CompanyType)=> {
         setCompanies([...companies(), e])

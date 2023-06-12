@@ -75,7 +75,7 @@ const OtherProfile =()=> {
   createEffect(() => {
 
     
-    instance.get(`https://13.49.228.160:443/api/users/${path[2]}`).then((theUser)=> {
+    instance.get(`https://insightsbackend.onrender.com/api/users/${path[2]}`).then((theUser)=> {
         setUserData({
             id: theUser.data.data.user.ID,
             name: theUser.data.data.user.Name,
@@ -88,16 +88,16 @@ const OtherProfile =()=> {
             
         })
 
-        instance.get(`https://13.49.228.160:443/api/users/${theUser.data.data.user.ID}/posts`).then((thePosts)=> {
+        instance.get(`https://insightsbackend.onrender.com/api/users/${theUser.data.data.user.ID}/posts`).then((thePosts)=> {
             setPosts(thePosts.data)
         })
     })
 
-    instance.get("https://13.49.228.160:443/api/users/me",).then((theMe)=> {
+    instance.get("https://insightsbackend.onrender.com/api/users/me",).then((theMe)=> {
       console.log(theMe.data.data.user.id)
       setMe(theMe.data.data.user.id)
 
-      instance.get(`https://13.49.228.160:443/api/users/${me()}/following`).then((res)=> {
+      instance.get(`https://insightsbackend.onrender.com/api/users/${me()}/following`).then((res)=> {
         setFollowing(res.data)
         following().map((rel:UserRelationship)=> {
           console.log(rel.FollowerID)
@@ -111,12 +111,12 @@ const OtherProfile =()=> {
 
     })
 
-    instance.get(`https://13.49.228.160:443/api/users/${path[2]}/following`).then((res)=> {
+    instance.get(`https://insightsbackend.onrender.com/api/users/${path[2]}/following`).then((res)=> {
       setUFollowing(res.data)
    
     })
 
-    instance.get(`https://13.49.228.160:443/api/users/${path[2]}/followers`).then((res)=> {
+    instance.get(`https://insightsbackend.onrender.com/api/users/${path[2]}/followers`).then((res)=> {
       setUFollowers(res.data)
    
     })

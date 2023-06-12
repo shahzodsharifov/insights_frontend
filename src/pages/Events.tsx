@@ -34,7 +34,7 @@ const Events:Component =()=> {
   })
 
   createEffect(() => {
-    instance.get("https://13.49.228.160:443/api/events")
+    instance.get("https://insightsbackend.onrender.com/api/events")
     .then((tEvents)=> {
       console.log(tEvents.data)
       tEvents.data.data.events.map((e:EventType)=> {
