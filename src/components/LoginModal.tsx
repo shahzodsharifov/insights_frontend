@@ -15,11 +15,14 @@ const LoginModal = (props:any) => {
   const [emailErr, setEmailErr] = createSignal("")
   const [passwordErr, setPasswordErr] = createSignal("")
   const [genErr, setGenErr] = createSignal("")
+  const [loading, setLoading]= createSignal(false)
+  
 
   const instance = axios.create({
     withCredentials: true,
     
   });
+
     const [showLogin, setShowLogin] = createSignal(false)
     const [form, setForm] = createStore({
       name: "",
@@ -41,6 +44,7 @@ const LoginModal = (props:any) => {
       if(isCompany()) {
         theRole = "company"
       }
+      setLoading(true)
       instance.post("https://api.noted.today/api/auth/register", {
         name: form.name,
         username: form.username,
@@ -48,15 +52,19 @@ const LoginModal = (props:any) => {
         password: form.password,
         role: theRole,
       }).then((response) => {
+        setLoading(false)
+        setShowLogin(true)
         console.log(response.headers)
       })
     }
 
     const handleLogin = () => {
+      setLoading(true)
       instance.post("https://api.noted.today/api/auth/login", {
         email: form.email,
         password: form.password
       }).then((response) => {
+        setLoading(false)
         console.log(response)
 
         if(response.status == 200) {

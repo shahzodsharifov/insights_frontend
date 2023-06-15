@@ -55,7 +55,7 @@ const Navigation = (props:NavProps) => {
         <Link href="/" class="w-1/4">
         <div id='logo' class="font-bold text-[#ffffff]  text-2xl full" onClick={() => {
           
-        }}  >insight.uz</div>
+        }}>noted</div>
         </Link>
   
     <Show when={pathName != "/editor" && pathName != "/newVaccancy" && pathName !="/newEvent"}>

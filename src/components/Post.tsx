@@ -10,6 +10,7 @@ type PostProps = {
     subheadline: string,
     Thumbnail:string,
     authorId: string,
+    createdAt: string
 }
 
 const Post= (props:PostProps)=> {
@@ -66,8 +67,10 @@ const Post= (props:PostProps)=> {
 
     
             console.log(didILike(), "crap!")
-    },[])
 
+       
+    },[])
+    const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'numeric', year: 'numeric' };
     return (
         <div id="post" class="flex flex-col w-full rounded-[1rem] bg-[#171717]">
             <Link href={`/posts/${props.postID}`}>
@@ -79,7 +82,7 @@ const Post= (props:PostProps)=> {
                     </div>
                     <p class="text-white opacity-75">{usrName()}</p>
                 </div>
-                <p id="date" class="text-white">25.04.23</p>
+                <p id="date" class="text-white">{new Date(props.createdAt).toLocaleDateString(undefined, options)}</p>
             </div>
 
             <div id="headline" class="mt-4">

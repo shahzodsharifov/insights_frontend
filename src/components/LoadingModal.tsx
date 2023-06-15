@@ -1,6 +1,8 @@
 
-
-const LoadingModal = () => {
+type ModalProps = {
+    modalStatus: string
+}
+const LoadingModal = (props: ModalProps) => {
     return (
         <div class="w-[20rem] h-[8rem] bg-[#171717] flex flex-row items-center align-baseline justify-center p-[20px] rounded-[12px]">
              <svg class="w-12 h-12 mr-3 -ml-1 text-white animate-spin" xmlns="https://www.w3.org/2000/svg" fill="none"
@@ -11,7 +13,7 @@ const LoadingModal = () => {
             </path>
            
         </svg>
-        <p class="text-white text-[24px] font-medium">Yuklanmoqda...</p>
+        <p class="text-white text-[24px] font-medium">{props.modalStatus}</p>
         </div>
     )
 }

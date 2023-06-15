@@ -7,12 +7,13 @@ import { URL } from "url"
 import { uploadFile, UploadClient } from '@uploadcare/upload-client'
 import { createSign } from "crypto"
 import axios from "axios"
-import { useLocation } from "@solidjs/router"
+import { useLocation, useNavigate } from "@solidjs/router"
 import { JSX } from "solid-js/jsx-runtime";
 import { createStore } from "solid-js/store"
 import { DateTimePicker } from 'date-time-picker-solid'
 import moment from "moment"
 import "flowbite"
+import LoadingModal from "../components/LoadingModal"
 
 
 const EventsCreator = () => {
@@ -21,6 +22,7 @@ const EventsCreator = () => {
     const [selectedFile, setSelectedFile] = createSignal<File | null>(null);
     const [previewUrl, setPreviewUrl] = createSignal<string | null>(null);
     const [showBtn, setShowBtn] = createSignal(false)
+    const [loading, setLoading]= createSignal(false)
     const [usrDetails, setUsrDetails]= createStore({
       id: "",
       name: "",
@@ -142,6 +144,7 @@ const EventsCreator = () => {
         return index < elements().length -1
       }))
       console.log(theInfo())
+      setLoading(true)
       instance.post(`https://api.noted.today/api/users/${usrDetails.id}/addEvent`, {
         Title: theTitle(),
         Date: theDate(),
@@ -154,6 +157,10 @@ const EventsCreator = () => {
       })
       .then((res)=> {
         console.log(res)
+        setLoading(false)
+        var nav = useNavigate()
+        nav("/events")
+
       })
     }
 
@@ -192,13 +199,17 @@ const EventsCreator = () => {
         </div>
         </Show>
 
-        <div id='editorBox' class=' flex flex-col md:w-[40rem] h-auto border-box m md:mt-[2rem] md:rounded-[1rem] px-6 py-6  bg-[#171717] ' >
-
+        <div id='editorBox' class=' flex flex-col w-full md:w-[40rem] h-auto border-box m md:mt-[2rem] md:rounded-[1rem] md:px-6 md:py-6 px-4 py-4  bg-[#171717] ' >
+        <Show when={loading()}>
+           <div class="md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0">
+              <LoadingModal modalStatus="Yuklanmoqda"/>
+            </div>
+           </Show>
             <h1 class="text-white text-[2rem] font-bold">Tadbir E'loni Yaratish</h1>
             <div id="editBody" class="w-full h-auto mt-4">
             <input type="text" placeholder="Tadbir nomi" onChange={(e)=> setTheTitle(e.target.value)} class="md:w-full border-[1px] border-[#ffffff55] rounded-[0.4rem] bg-transparent text-[1rem] text-white px-2 py-2 outline-none"/>
 
-            <div id="choices" class="flex flex-row justify-between mt-4">
+            <div id="choices" class="flex flex-col md:flex-row gap-2 md:ga md:justify-between mt-4">
             <div id="jobType" class="flex flex-row justify-between align-baselin items-center  px-2 py-2 w-[9rem] border-[1px] border-[#ffffff55] rounded-[0.4rem]">
             <Show when={theEventType().length >1} fallback={
                  <p class="text-[#e8f6ff] opacity-60">Tadbir turi</p>
