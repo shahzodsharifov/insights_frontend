@@ -22,6 +22,7 @@ export type PostType = {
   comments: [],
   headline: string,
   subtitle: string
+  CreatedAt: string,
 }
 
 const Profile:Component =()=> {
@@ -166,7 +167,7 @@ const Profile:Component =()=> {
   <div class="flex flex-col gap-6">
    <For each={posts()}>{(post, i )=> 
 
-    <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail}/>
+    <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail} createdAt={post.CreatedAt}/>
    }
 
    </For>

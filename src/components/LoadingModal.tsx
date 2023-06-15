@@ -13,7 +13,7 @@ const LoadingModal = (props: ModalProps) => {
             </path>
            
         </svg>
-        <p class="text-white text-[24px] font-medium">Yuklanmoqda...</p>
+        <p class="text-white text-[24px] font-medium">{props.modalStatus}</p>
         </div>
     )
 }

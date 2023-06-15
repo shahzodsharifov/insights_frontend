@@ -65,7 +65,7 @@ const App: Component = () => {
     <For each={trendingPosts().reverse()}>{(post, i) =>
      
     
-      <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail}/>
+      <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail} createdAt={post.CreatedAt}/>
 
     }
 

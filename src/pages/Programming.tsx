@@ -69,7 +69,7 @@ const Programming= () => {
     <For each={trendingPosts().reverse()}>{(post, i) =>
      
       <Link href={`/posts/${post.ID}`}>
-      <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail}/>
+      <Post postID={post.ID} headline={post.headline} authorId={post.author_id} subheadline={post.subtitle} Thumbnail={post.Thumbnail} createdAt={post.CreatedAt}/>
       </Link>
     }
 
