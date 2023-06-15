@@ -41,7 +41,7 @@ const LoginModal = (props:any) => {
       if(isCompany()) {
         theRole = "company"
       }
-      instance.post("https://insightsbackend.onrender.com/api/auth/register", {
+      instance.post("https://api.noted.today/api/auth/register", {
         name: form.name,
         username: form.username,
         email: form.email,
@@ -53,7 +53,7 @@ const LoginModal = (props:any) => {
     }
 
     const handleLogin = () => {
-      instance.post("https://insightsbackend.onrender.com/api/auth/login", {
+      instance.post("https://api.noted.today/api/auth/login", {
         email: form.email,
         password: form.password
       }).then((response) => {

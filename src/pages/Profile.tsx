@@ -59,7 +59,7 @@ const Profile:Component =()=> {
 
   const fetchUser = async () => {
 
-      const res = await fetch("https://insightsbackend.onrender.com/api/users/me", {
+      const res = await fetch("https://api.noted.today/api/users/me", {
         method: "GET",
         mode: "cors",
         credentials: "include",
@@ -90,7 +90,7 @@ const Profile:Component =()=> {
 
      
   
-      instance.get(`https://insightsbackend.onrender.com/api/users/${theUsr.id}/posts`).then((thePosts) => {
+      instance.get(`https://api.noted.today/api/users/${theUsr.id}/posts`).then((thePosts) => {
         console.log(thePosts.data)
         thePosts.data.map((e:PostType)=> {
           setPosts([...posts(), e])
@@ -109,13 +109,13 @@ const Profile:Component =()=> {
       })
 
       
-      instance.get(`https://insightsbackend.onrender.com/api/users/${user.id}/followers`).then((res)=> {
+      instance.get(`https://api.noted.today/api/users/${user.id}/followers`).then((res)=> {
         setMyFollowers(res.data)
         console.log(res.data,"done deal")
      
       })
 
-      instance.get(`https://insightsbackend.onrender.com/api/users/${user.id}/following`).then((res)=> {
+      instance.get(`https://api.noted.today/api/users/${user.id}/following`).then((res)=> {
         setMyFollowings(res.data)
         console.log(res.data,"done deal")
      

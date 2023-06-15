@@ -24,7 +24,7 @@ const Programming= () => {
 
 
   createEffect(() => {
-    instance.get("https://insightsbackend.onrender.com/api/posts/topics/Dasturlash",{
+    instance.get("https://api.noted.today/api/posts/topics/Dasturlash",{
 
   
   }

@@ -34,7 +34,7 @@ const Navigation = (props:NavProps) => {
     const [showSearchModal, setSearchModal] = createSignal(false)
   
     createEffect(()=> {
-      instance.get("https://insightsbackend.onrender.com/api/users/me")
+      instance.get("https://api.noted.today/api/users/me")
       .then((response)=> {
         setLogin(true)
         console.log(response)

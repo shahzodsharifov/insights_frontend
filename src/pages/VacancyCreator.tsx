@@ -144,7 +144,7 @@ const VaccancyCreator = () => {
       }))
       console.log(offerList)
       console.log(theInfo())
-      instance.post(`https://insightsbackend.onrender.com/api/users/${usrDetails.id}/addVaccancy`, {
+      instance.post(`https://api.noted.today/api/users/${usrDetails.id}/addVaccancy`, {
         Title: theTitle(),
         Location: theLocation(),
         Salary: theSalary(),
@@ -165,7 +165,7 @@ const VaccancyCreator = () => {
 
 
     createEffect(() => {
-      instance.get("https://insightsbackend.onrender.com/api/users/me", {
+      instance.get("https://api.noted.today/api/users/me", {
 
       })
       .then((response)=> {

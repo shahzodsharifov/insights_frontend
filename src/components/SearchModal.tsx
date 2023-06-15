@@ -31,7 +31,7 @@ const SearchModal = (props:SearchModalTypes) => {
     const loc = useLocation()
     const [theUsers, setTheUsers] = createSignal<Array<User>>([])
     createEffect(()=>{
-        instance.get(`https://insightsbackend.onrender.com/api/users/search/${props.searchQuery}`).then((users)=> {
+        instance.get(`https://api.noted.today/api/users/search/${props.searchQuery}`).then((users)=> {
             console.log(users.data.data.users)
             setTheUsers(users.data.data.users)
         })

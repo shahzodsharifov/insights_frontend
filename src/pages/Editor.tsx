@@ -259,7 +259,7 @@ const Editor = () => {
               client.uploadFile(selectedFile()!).then((file) => {
                 setPhotoId(file.uuid)
                 console.log(file.uuid)
-                instance.post(`https://insightsbackend.onrender.com/api/users/${id}/addPost`, {
+                instance.post(`https://api.noted.today/api/users/${id}/addPost`, {
                   Headline: theHeadline(),
                   Subtitle: theSubheadline(),
                   Body: theBody(),

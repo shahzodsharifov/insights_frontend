@@ -20,7 +20,7 @@ const EventsView = (props: EventsProps)=> {
       });
 
     createRenderEffect(()=>{
-        instance.get(`https://insightsbackend.onrender.com/api/users/${props.organizerId}`).then((user)=> {
+        instance.get(`https://api.noted.today/api/users/${props.organizerId}`).then((user)=> {
             console.log(user.data.data.user)
             setUsrName(user.data.data.user.Name)
            

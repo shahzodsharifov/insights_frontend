@@ -68,13 +68,13 @@ const EventDetails =()=> {
    
   createEffect(() => {
    
-    instance.get(`https://insightsbackend.onrender.com/api/events/${path[2]}`).then((theEvent) => {
+    instance.get(`https://api.noted.today/api/events/${path[2]}`).then((theEvent) => {
     
         console.log(theEvent.data.data.event)
       
         setEventData(theEvent.data.data.event)
 
-        instance.get(`https://insightsbackend.onrender.com/api/users/${theEvent.data.data.event.organizer_id}`).then((user)=> {
+        instance.get(`https://api.noted.today/api/users/${theEvent.data.data.event.organizer_id}`).then((user)=> {
           console.log(user.data.data.user)
           setUsrName(user.data.data.user.Name)
           setUsrPhoto(user.data.data.user.Photo)

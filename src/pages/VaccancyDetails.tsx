@@ -68,13 +68,13 @@ const VaccancyDetails =()=> {
    
   createEffect(() => {
    
-    instance.get(`https://insightsbackend.onrender.com/api/vaccancies/${path[2]}`).then((theVaccancy) => {
+    instance.get(`https://api.noted.today/api/vaccancies/${path[2]}`).then((theVaccancy) => {
     
         console.log(theVaccancy.data.data.vaccancy)
       
         setVaccancyData(theVaccancy.data.data.vaccancy)
 
-      //   instance.get(`https://insightsbackend.onrender.com/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
+      //   instance.get(`https://api.noted.today/api/users/${thePost.data.data.post.author_id}`).then((user)=> {
       //     console.log(user.data.data.user)
       //     setUsrName(user.data.data.user.Name)
       //     setUsrPhoto(user.data.data.user.Photo)

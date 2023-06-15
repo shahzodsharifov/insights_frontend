@@ -142,7 +142,7 @@ const EventsCreator = () => {
         return index < elements().length -1
       }))
       console.log(theInfo())
-      instance.post(`https://insightsbackend.onrender.com/api/users/${usrDetails.id}/addEvent`, {
+      instance.post(`https://api.noted.today/api/users/${usrDetails.id}/addEvent`, {
         Title: theTitle(),
         Date: theDate(),
         Location: theLocation(),
@@ -159,7 +159,7 @@ const EventsCreator = () => {
 
 
     createEffect(() => {
-      instance.get("https://insightsbackend.onrender.com/api/users/me", {
+      instance.get("https://api.noted.today/api/users/me", {
 
       })
       .then((response)=> {

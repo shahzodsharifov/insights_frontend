@@ -34,7 +34,7 @@ const Events:Component =()=> {
   })
 
   createEffect(() => {
-    instance.get("https://insightsbackend.onrender.com/api/events")
+    instance.get("https://api.noted.today/api/events")
     .then((tEvents)=> {
       console.log(tEvents.data)
       tEvents.data.data.events.map((e:EventType)=> {

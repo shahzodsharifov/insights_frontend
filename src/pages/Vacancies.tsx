@@ -30,7 +30,7 @@ const Vaccancies:Component =()=> {
     
 
   createEffect(()=>{
-    instance.get("https://insightsbackend.onrender.com/api/vaccancies/").then((tVaccancies) => {
+    instance.get("https://api.noted.today/api/vaccancies/").then((tVaccancies) => {
       console.log(tVaccancies.data)
       tVaccancies.data.data.vaccancies.map((e:VaccancyType)=> {
         setVaccancies([...vaccancies(), e])

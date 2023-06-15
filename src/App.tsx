@@ -23,7 +23,7 @@ const App: Component = () => {
     
   });
   createEffect(() => {
-    instance.get("https://insightsbackend.onrender.com/api/posts/trendingPosts").then((tPosts) => {
+    instance.get("https://api.noted.today/api/posts/trendingPosts").then((tPosts) => {
       console.log(tPosts.data)
       tPosts.data.data.post.map((e:PostType)=> {
         setTrendingPosts([...trendingPosts(), e])
