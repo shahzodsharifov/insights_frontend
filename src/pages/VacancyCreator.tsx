@@ -200,7 +200,7 @@ const VaccancyCreator = () => {
 
         <div id='editorBox' class=' flex flex-col w-full md:w-[40rem] h-auto border-box md:mt-[2rem] md:rounded-[1rem] md:px-6 md:py-6 px-4 py-4  bg-[#171717] ' >
         <Show when={loading()}>
-           <div class="md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0">
+           <div class="md:fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 md:top-0 md:left-0">
               <LoadingModal modalStatus="Yuklanmoqda..."/>
             </div>
            </Show>

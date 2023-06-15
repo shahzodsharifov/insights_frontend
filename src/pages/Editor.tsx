@@ -199,7 +199,7 @@ const Editor = () => {
         <div id='editorBox' class=' flex flex-col md:w-[40rem]   border-box m md:mt-[2rem] md:rounded-[1rem] px-6 py-6  bg-[#171717] ' >
            <Show when={loading()}>
            <div class="md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0">
-              <LoadingModal/>
+              <LoadingModal modalStatus="Yuklanmoqda..."/>
             </div>
            </Show>
             <div onMouseOver={() => setShowBtn(true)} onMouseLeave={() => setShowBtn(false)}  

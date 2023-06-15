@@ -3,6 +3,7 @@ import { useNavigate } from "@solidjs/router"
 import axios from "axios"
 import { Show, createSignal } from "solid-js"
 import {createStore} from "solid-js/store"
+import LoadingModal from "./LoadingModal"
 
 
 const LoginModal = (props:any) => {
@@ -80,6 +81,11 @@ const LoginModal = (props:any) => {
    
         return (
          <>
+           <Show when={loading()}>
+           <div class="md:fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 md:top-0 md:left-0">
+              <LoadingModal modalStatus="Biroz kuting..."/>
+            </div>
+           </Show>
           <Show when={showLogin()===false}>
               <div class="bg-[#171717] max-sm:w-full max-sm:px-5 max-sm:h-[100vh] md:w-[24rem] md:h-[auto] flex flex-col  md:px-12 md:rounded-[1.2rem] md:py-10">
                <div class="flex flex-row justify-end">
