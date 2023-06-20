@@ -110,7 +110,7 @@ const VaccancyDetails =()=> {
   </div>
   
   <Show when={loginModalShow()==true}>
-  <div id='loginModal' class='md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0'  >
+  <div id='loginModal' class='fixed flex flex-row justify-center items-center w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0'  >
   <LoginModal  setLoginModalShow={setLoginModalShow}/>
   </div>
   </Show>
@@ -120,7 +120,7 @@ const VaccancyDetails =()=> {
   <Sidebar setLoginModalShow={setLoginModalShow}/>
   </div>
   
-  <div id="postBody" class="flex flex-col w-2/4 gap-8 px-16 min-h-[100vh]">
+  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 px-16 min-h-[100vh]">
   
     <div class="rounded-[12px] bg-[#171717] px-[20px] py-[20px] ">
 
