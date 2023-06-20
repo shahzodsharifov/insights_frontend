@@ -194,14 +194,14 @@ const EventsCreator = () => {
     
         
         <Show when={loginModalShow()==true}>
-        <div id='loginModal' class='md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0'  >
+        <div id='loginModal' class='fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 top-0 left-0'  >
         <LoginModal  setLoginModalShow={setLoginModalShow}/>
         </div>
         </Show>
 
         <div id='editorBox' class=' flex flex-col w-full md:w-[40rem] h-auto border-box m md:mt-[2rem] md:rounded-[1rem] md:px-6 md:py-6 px-4 py-4  bg-[#171717] ' >
         <Show when={loading()}>
-           <div class="md:fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0">
+           <div class="fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 top-0 left-0">
               <LoadingModal modalStatus="Yuklanmoqda"/>
             </div>
            </Show>

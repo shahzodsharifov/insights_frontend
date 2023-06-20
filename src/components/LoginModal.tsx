@@ -82,7 +82,7 @@ const LoginModal = (props:any) => {
         return (
          <>
            <Show when={loading()}>
-           <div class="md:fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 md:top-0 md:left-0">
+           <div class="fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 md:top-0 md:left-0">
               <LoadingModal modalStatus="Biroz kuting..."/>
             </div>
            </Show>
