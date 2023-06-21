@@ -116,11 +116,11 @@ const EventDetails =()=> {
   </Show>
   <div id='contents' class='w-full min-h-[100vh] b-[#0C0C0C] flex flex-row px-8 py-6 gap-6 justify-center' >
   
-  <div id='sidebar'  class='w-1/4 fixed left-14'>
+  <div id='sidebar' class=' md:w-1/5 z-10 w-full fixed max-sm:bottom-0  md:left-14'>
   <Sidebar setLoginModalShow={setLoginModalShow}/>
   </div>
   
-  <div id="postBody" class="flex flex-col w-2/4 gap-8 px-16">
+  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 md:px-16">
   
     <div class="rounded-[12px] bg-[#171717]  p-[20px]">
     <h1 class="text-white text-[1.8rem] font-bold">{eventData.title}</h1>
