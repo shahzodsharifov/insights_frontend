@@ -51,7 +51,7 @@ const Navigation = (props:NavProps) => {
     },[])
     
     return(
-        <div id='nav' class='flex flex-row w-full md:w-full px-5 md:justify-between h-16 md:h-20 bg-[#171717] md:py-4 md:px-16 md:gap-6 items-center justify-between' >
+        <div id='nav' class='flex flex-row w-full md:w-full px-5 md:justify-between h-16 md:h-20 bg-[#171717] border-b-[1px solid rgba(255, 255, 255, 0.30);] md:py-4 md:px-16 md:gap-6 items-center justify-between' >
         <Link href="/" class="w-1/4">
         <div id='logo' class="font-bold text-[#ffffff]  text-2xl full" onClick={() => {
           

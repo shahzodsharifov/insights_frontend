@@ -72,7 +72,7 @@ const Post= (props:PostProps)=> {
     },[])
     const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'numeric', year: 'numeric' };
     return (
-        <div id="post" class="flex flex-col w-full rounded-[1rem] bg-[#171717]">
+        <div id="post" class="flex flex-col w-full rounded-[1rem] bg-[#171717] border-[1px solid rgba(255, 255, 255, 0.30)]">
             <Link href={`/posts/${props.postID}`}>
             <div id="textInfo" class="px-6 py-6">
         <div id="header" class="flex flex-row justify-between">
