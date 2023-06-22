@@ -120,9 +120,9 @@ const EventDetails =()=> {
   <Sidebar setLoginModalShow={setLoginModalShow}/>
   </div>
   
-  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 md:px-16  border-[1px] border-solid border-white/[0.15]" >
+  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 md:px-16 " >
   
-    <div class="rounded-[12px] bg-[#171717]  p-[20px]">
+    <div class="rounded-[12px] bg-[#171717]  p-[20px] border-[1px] border-solid border-white/[0.15]  ">
     <h1 class="text-white text-[1.8rem] font-bold">{eventData.title}</h1>
     <div class="flex flex-row gap-4">
         <p class="text-white text-[17px] opacity-50" >{usrName()}</p>

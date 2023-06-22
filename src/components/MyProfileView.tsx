@@ -37,7 +37,7 @@ const instance = axios.create({
 const MyProfileView = (props:MyProfileViewProps)=> {
     const path = useLocation()
     return (
-        <div id="profile" class="flex flex-col w-full rounded-[1rem] bg-[#171717]">
+        <div id="profile" class="flex flex-col w-full rounded-[1rem] bg-[#171717] border-[1px] border-solid border-white/[0.15]">
         <div id="textInfo" class="px-6 py-6 flex flex-row gap-8">
         <div id="thumbnail" class="w-[8rem] md:h-[8rem] max-sm:h-[6rem]  overflow-clip rounded-[1rem]  ">
                 <img src={props.photo == "default.png" ? Default : Default}/>
