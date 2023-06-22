@@ -4,7 +4,7 @@ import { CompanyType } from "../pages/Companies";
 
 const CompanyView = (props:CompanyType)=> {
     return (
-        <div id="post" class="flex flex-col w-full rounded-[1rem] bg-[#171717] mt-10">
+        <div id="post" class="flex flex-col w-full rounded-[1rem] bg-[#171717] mt-10  border-[1px] border-solid border-white/[0.15]">
         <div id="textInfo" class="px-6 py-6">
         <div id="thumbnail" class="w-[8rem] h-[8rem] overflow-clip rounded-[1rem] mt-[-4rem] ">
                 <img src={Logo}/>

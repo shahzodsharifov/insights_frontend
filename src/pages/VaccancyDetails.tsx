@@ -120,7 +120,7 @@ const VaccancyDetails =()=> {
   <Sidebar setLoginModalShow={setLoginModalShow}/>
   </div>
   
-  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 px-8 md:px-16 min-h-[100vh]">
+  <div id="postBody" class="flex flex-col md:w-2/4 gap-8 px-8 md:px-16 min-h-[100vh]  border-[1px] border-solid border-white/[0.15]">
   
     <div class="rounded-[12px] bg-[#171717] px-[20px] py-[20px] ">
 
@@ -158,11 +158,11 @@ const VaccancyDetails =()=> {
     
   </div>
   
-  <div class='w-1/4  right-16 absolute pl-4'  >
+  {/* <div class='w-1/4  right-16 absolute pl-4'  >
   <div class=''>
   <Vacancies/>
   </div>
-  </div>
+  </div> */}
   
   </div>
   </div>

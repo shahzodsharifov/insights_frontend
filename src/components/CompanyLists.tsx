@@ -3,7 +3,7 @@ import Logo from "../assets/logogo.png"
 
 const CompanyLists:Component = () => {
     return(
-        <div id="companyList" class="flex flex-col gap-4 bg-[#171717] px-6 py-6 rounded-[1rem]" >
+        <div id="companyList" class="flex flex-col gap-4 bg-[#171717] px-6 py-6 rounded-[1rem]  border-[1px] border-solid border-white/[0.15]" >
             <h1 class="text-white md:text-[1.2rem] font-bold">Kompaniyalar</h1>
             <div id="c1" class="flex flex-row items-center gap-2" >
                <div id="image" class="w-10 h-10 overflow-clip rounded-[30rem]">

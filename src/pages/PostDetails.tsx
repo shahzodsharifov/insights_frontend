@@ -161,7 +161,7 @@ const PostDetails =()=> {
   <Sidebar setLoginModalShow={setLoginModalShow}/>
   </div>
   
-  <div id="postBody" class='md:w-2/4 flex flex-col gap-6 md:py-0 py-4 px-5 md:px-14 '>
+  <div id="postBody" class='md:w-2/4 flex flex-col gap-6 md:py-0 py-4 px-5 md:px-14  border-[1px] border-solid border-white/[0.15] '>
   
     <div class="rounded-[1.2rem] bg-[#171717]  ">
     <div id="header" class="flex flex-row justify-between items-center px-[1rem] mt-2">
