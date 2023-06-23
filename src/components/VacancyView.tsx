@@ -28,7 +28,7 @@ const VacancyView = (props: VaccancyProps)=> {
     },[])
 
     return (
-        <div id="vacancy" class="flex flex-col w-full rounded-[1rem] bg-[#171717]  px-6 py-4 " >
+        <div id="vacancy" class="flex flex-col w-full rounded-[1rem] bg-[#171717]  px-6 py-4 border-[1px] border-solid border-white/[0.15]" >
             <p id="employerName" class="text-white" >{usrName()}</p>
               <div id="headline" class="mt-4">
                 <h1 class="text-white text-[1.6rem] font-bold leading-8 text">{props.title}</h1>

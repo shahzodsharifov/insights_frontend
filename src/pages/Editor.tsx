@@ -196,7 +196,7 @@ const Editor = () => {
         </div>
         </Show>
 
-        <div id='editorBox' class=' flex flex-col md:w-[40rem]   border-box m md:mt-[2rem] md:rounded-[1rem] px-6 py-6  bg-[#171717] ' >
+        <div id='editorBox' class=' flex flex-col md:w-[40rem]   border-box  md:mt-[2rem] md:rounded-[1rem] px-6 py-6  bg-[#171717]   border-[1px] border-solid border-white/[0.15] ' >
            <Show when={loading()}>
            <div class="fixed flex flex-row justify-center items-center md:w-full md:h-full z-20 bg-white/50 md:top-0 md:left-0">
 

@@ -198,7 +198,7 @@ const VaccancyCreator = () => {
         </div>
         </Show>
 
-        <div id='editorBox' class=' flex flex-col w-full md:w-[40rem] h-auto border-box md:mt-[2rem] md:rounded-[1rem] md:px-6 md:py-6 px-4 py-4  bg-[#171717] ' >
+        <div id='editorBox' class=' flex flex-col w-full md:w-[40rem] h-auto border-box md:mt-[2rem] md:rounded-[1rem] md:px-6 md:py-6 px-4 py-4  bg-[#171717]  border-[1px] border-solid border-white/[0.15] ' >
         <Show when={loading()}>
            <div class="fixed flex flex-row justify-center items-center w-full h-full z-20 bg-white/50 top-0 left-0">
               <LoadingModal modalStatus="Yuklanmoqda..."/>
