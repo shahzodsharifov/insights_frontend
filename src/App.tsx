@@ -1,4 +1,4 @@
-import { Component, For, Show, createEffect, createSignal, createMemo, onMount } from 'solid-js';
+import { Component, For, Show, createEffect, createSignal, createResource, createMemo, onMount } from 'solid-js';
 import Navigation from './components/Navigation';
 import Sidebar from './components/Sidebar';
 import CompanyLists from './components/CompanyLists';
@@ -17,15 +17,27 @@ import LoadingModal from './components/LoadingModal';
 const App: Component = () => {
 
   const[trendingPosts, setTrendingPosts] = createSignal<Array<PostType>>([])
-  const instance = axios.create({
-    withCredentials: true,
-    
-  });
-  const cachedData = createMemo( function():Promise<AxiosResponse<any, any>>{
 
-  var res = instance.get("https://api.noted.today/api/posts/trendingPosts")
-  return res}
-  )
+
+  const fetchData = async () => {
+    const instance = axios.create({
+      withCredentials: true,
+    });
+  
+    const res = await instance.get('https://api.noted.today/api/posts/trendingPosts');
+    return res.data; // Return the data directly from the Axios response
+  };
+
+  const [cachedData] = createResource(fetchData)
+  // const instance = axios.create({
+  //   withCredentials: true,
+    
+  // });
+  // const cachedData = createMemo( function():Promise<AxiosResponse<any, any>>{
+
+  // var res = instance.get("https://api.noted.today/api/posts/trendingPosts")
+  // return res}
+  // )
 
   createEffect(() => {
     cachedData().then((tPosts:any) => {
