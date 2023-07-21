@@ -1,4 +1,4 @@
-import { Component, For, Show, createEffect, createSignal, onMount } from 'solid-js';
+import { Component, For, Show, createEffect, createSignal, createMemo, onMount } from 'solid-js';
 import Navigation from './components/Navigation';
 import Sidebar from './components/Sidebar';
 import CompanyLists from './components/CompanyLists';
@@ -6,7 +6,7 @@ import Post from './components/Post';
 import Companies from './pages/Companies';
 import LoginModal from './components/LoginModal';
 import VacanciesList from './components/VacanciesList';
-import axios, { Axios } from 'axios';
+import axios, { Axios, AxiosResponse } from 'axios';
 import { PostType } from './pages/Profile';
 import { Link } from '@solidjs/router';
 import LoadingModal from './components/LoadingModal';
@@ -17,13 +17,18 @@ import LoadingModal from './components/LoadingModal';
 const App: Component = () => {
 
   const[trendingPosts, setTrendingPosts] = createSignal<Array<PostType>>([])
-
   const instance = axios.create({
     withCredentials: true,
     
   });
+  const cachedData = createMemo( function():Promise<AxiosResponse<any, any>>{
+
+  var res = instance.get("https://api.noted.today/api/posts/trendingPosts")
+  return res}
+  )
+
   createEffect(() => {
-    instance.get("https://api.noted.today/api/posts/trendingPosts").then((tPosts) => {
+    cachedData().then((tPosts:any) => {
       console.log(tPosts.data)
       tPosts.data.data.post.map((e:PostType)=> {
         setTrendingPosts([...trendingPosts(), e])
