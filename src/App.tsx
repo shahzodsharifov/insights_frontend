@@ -28,7 +28,7 @@ const App: Component = () => {
     return res.data; // Return the data directly from the Axios response
   };
 
-  const [cachedData] = createResource(fetchData)
+  const [cachedData] = createResource<Promise<AxiosResponse<any, any>>>(fetchData)
   // const instance = axios.create({
   //   withCredentials: true,
     
@@ -40,7 +40,7 @@ const App: Component = () => {
   // )
 
   createEffect(() => {
-    cachedData().then((tPosts:any) => {
+    cachedData()!.then((tPosts:any) => {
       console.log(tPosts.data)
       tPosts.data.data.post.map((e:PostType)=> {
         setTrendingPosts([...trendingPosts(), e])
